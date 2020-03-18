@@ -4,3 +4,9 @@ from django.http import HttpResponse
 
 def index (request):
     return render(request, 'index/index.html')
+
+def pin (request):
+    return render(request, 'index/pin.html')
+
+def withdrawal (request):
+    return render(request, 'index/withdrawal.html')
