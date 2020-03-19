@@ -3,10 +3,11 @@ from .models import *
 
 def updateBalance(request, userid):
     balans=request.POST['sum']
-    user=User.objects.get(pk=userid)
-    kartica=Kartica.objects.get(user=user)
-    if(kartica.balans>=balans):
-        kartica.balans=kartica.balans-balans
+    balans=int(balans)
+    user=User.objects.get(id=userid)
+    kartica=Kartica.objects.get(korisnik=user)
+    if(kartica.Balance>=balans):
+        kartica.Balance=kartica.Balance-balans
         kartica.save()
 
         return True

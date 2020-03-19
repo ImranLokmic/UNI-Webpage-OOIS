@@ -4,14 +4,14 @@ from django.db import models
 
 class User(models.Model):
     name=models.CharField(max_length=250)
-    kartica_usera=models.ManyToManyField(User, through='Verifikacija')
 
 
 class Kartica(models.Model):
     Card_number = models.CharField(max_length=19,default='1234 5678 9123 4567',primary_key=True)
     CVV = models.CharField(max_length=3,default='123')
     Balance = models.IntegerField(default=0)
-    korisnik=models.ForeignKey(User,on_delete=models.CASCADE)
+    korisnik=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
+    kartica_usera=models.ManyToManyField(User,related_name='kartica_usera', through='Verifikacija')
 
     def __str__(self):
         return self.Card_number
