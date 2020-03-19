@@ -13,58 +13,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
   <link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/183786/waves.css" rel="stylesheet">
 </head>
+
 <body>
   <div id="PINcode"></div>
   <div class="smallscreen">
     <h1>Screen is too small</h1>
   </div>
-  </body>
-  <script>
-  $(function() {
-    $("#PINform").draggable();
-  });
-
-  $("#PINcode").html(
-    "<form action='' method='post' name='PINform' id='PINform' autocomplete='off' draggable='true'>" +
-    "<h2>Your balance is:</h2>"+
-    "<img src='{% static 'index/img/banklogo.png' %}' class='logo'>" +
-    "<input id='PINbox' type='password' value='' name='PINbox' disabled />" +
-    "<br/>" +
-    "<input type='button' class='PINbutton' name='1' value='1' id='1' onClick=addNumber(this); />" +
-    "<input type='button' class='PINbutton' name='2' value='2' id='2' onClick=addNumber(this); />" +
-    "<input type='button' class='PINbutton' name='3' value='3' id='3' onClick=addNumber(this); />" +
-    "<br>" +
-    "<input type='button' class='PINbutton' name='4' value='4' id='4' onClick=addNumber(this); />" +
-    "<input type='button' class='PINbutton' name='5' value='5' id='5' onClick=addNumber(this); />" +
-    "<input type='button' class='PINbutton' name='6' value='6' id='6' onClick=addNumber(this); />" +
-    "<br>" +
-    "<input type='button' class='PINbutton' name='7' value='7' id='7' onClick=addNumber(this); />" +
-    "<input type='button' class='PINbutton' name='8' value='8' id='8' onClick=addNumber(this); />" +
-    "<input type='button' class='PINbutton' name='9' value='9' id='9' onClick=addNumber(this); />" +
-    "<br>" +
-    "<input type='button' class='PINbutton clear' name='-' value='clear' id='-' onClick=clearForm(this); />" +
-    "<input type='button' class='PINbutton' name='0' value='0' id='0' onClick=addNumber(this); />" +
-    "<input type='button' class='PINbutton enter' name='+' value='enter' id='+' onClick=submitForm(PINbox); />" +
-    "</form>"
-  );
-
-  function addNumber(e) {
-    var v = $("#PINbox").val();
-      $("#PINbox").val(v + e.value);
-  }
-
-  function clearForm(e) {
-    $("#PINbox").val("");
-  }
-
-  function submitForm(e) {
-    if (e.value == "") {
-      alert("Enter a PIN");
-    } else {
-      alert("Your PIN has been sent!");
-      $("#PINbox").val("");
-    };
-  };
-  </script>
+  <h1>{% if message %}
+      {{ message}}
+      {% endif %}</h1>
+  <h2>Your balance is:</h2>
+  <form method="post" action="">
+    <label for="sum">Enter a sum</label>
+    <input type="number" autocomplete="off" name="sum" id="sum">
+    <div class="form-group" id="confirm-now">
+      <button type="submit" class="btn btn-default" id="confirm-card">Confirm</button>
+    </div>
+   </form>
+</body>
 
 </html>
