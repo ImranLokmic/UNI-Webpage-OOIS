@@ -26,7 +26,7 @@
   <form method="post" action= "{% url 'withdrawal'  user.id %}">
     {% csrf_token %}
     <label for="sum">Enter a sum</label>
-    <input type="number" step="1" autocomplete="off" name="sum" id="sum">
+    <input type="number" step="1" autocomplete="off" name="sum" id="sum" min="1>
     <div class="form-group" id="confirm-now">
       <button type="submit" class="btn btn-default" id="confirm-card">Confirm</button>
     </div>

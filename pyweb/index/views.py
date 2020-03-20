@@ -35,7 +35,5 @@ def test (request):
         else:
             message="nepostojeci korisnik"
             return render(request,'index/test.html', { 'message':message})
-
-
     else:
         return render(request, 'index/test.html')
