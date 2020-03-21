@@ -14,44 +14,48 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
   <link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/183786/waves.css" rel="stylesheet">
 </head>
+
 <body>
-<img src="{% static "index/img/banklogo.png" %}" class="logo">
-<div class="smallscreen">
-  <h1>Screen is too small </h1>
-</div>
-<h1>{% if message %}
-    {{ message}}
-    {% endif %}</h1>
-<div class="creditCardForm">
-  <div class="heading">
-    <h1>Enter your credit card information</h1>
+  <img src="{% static "index/img/banklogo.png" %}" class="logo">
+  <div class="smallscreen">
+    <img src="{% static "index/img/warning.svg" %}" height="80px">
+    <h1>Screen is too small </h1>
   </div>
-  <div class="payment">
-    <form method="post" action="{% url 'test' %}">
-    {% csrf_token %}
-      <div class="form-group owner">
-        <label for="owner">Owner name</label>
-        <input type="text" class="form-control" name="own" id="owner" autocomplete="off">
-      </div>
-      <div class="form-group" id="card-number-field">
-        <label for="cardNumber">Card Number</label>
-        <input type="text" class="form-control" name="card" id="cardNumber" maxlength="19" required pattern="[0-9]{4} *[0-9]{4} *[0-9]{4} *[0-9]{4}" autocomplete="off">
-      </div>
-      <div class="form-group CVV">
-        <label for="pin">Pin</label>
-        <input type="password" class="form-control" name="p" id="pin" maxlength="4" required pattern="[1-9]{4}" autocomplete="off">
-      </div>
-      <div class="form-group" id="credit_cards">
-        <img src="{% static "index/img/home/visa.jpg" %}" id="visa">
-        <img src="{% static "index/img/home/mastercard.jpg" %}" id="mastercard">
-        <img src="{% static "index/img/home/amex.jpg" %}" id="amex">
-      </div>
-      <div class="form-group" id="confirm-now">
-        <button type="submit" href="index.html" class="btn btn-default" id="confirm-card">Confirm</button>
-      </div>
-    </form>
+  {% if message %}
+  <div class="message">
+    <h1>{{ message}}</h1>
   </div>
-</div>
+  {% endif %}
+  <div class="creditCardForm">
+    <div class="heading">
+      <h1>Enter your credit card information</h1>
+    </div>
+    <div class="payment">
+      <form method="post" action="{% url 'test' %}">
+        {% csrf_token %}
+        <div class="form-group owner">
+          <label for="owner">Owner name</label>
+          <input type="text" class="form-control" name="own" id="owner" autocomplete="off">
+        </div>
+        <div class="form-group" id="card-number-field">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" class="form-control" name="card" id="cardNumber" maxlength="19" required pattern="[0-9]{4} *[0-9]{4} *[0-9]{4} *[0-9]{4}" autocomplete="off">
+        </div>
+        <div class="form-group CVV">
+          <label for="pin">Pin</label>
+          <input type="password" class="form-control" name="p" id="pin" maxlength="4" required pattern="[1-9]{4}" autocomplete="off">
+        </div>
+        <div class="form-group" id="credit_cards">
+          <img src="{% static "index/img/home/visa.jpg" %}" id="visa">
+          <img src="{% static "index/img/home/mastercard.jpg" %}" id="mastercard">
+          <img src="{% static "index/img/home/amex.jpg" %}" id="amex">
+        </div>
+        <div class="form-group" id="confirm-now">
+          <button type="submit" href="index.html" class="btn btn-default" id="confirm-card">Confirm</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
 
 </html>

@@ -17,93 +17,109 @@ body {
   max-width: 80px;
 }
 
-#PINform input:focus,
-#PINform select:focus,
-#PINform textarea:focus,
-#PINform button:focus {
-  outline: none;
+.message {
+  background: white;
+  color: green;
+  padding: 20px 20px;
+  margin: 10px 10px 10px 10px;
+  box-shadow: 0px 5px 5px -0px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
-#PINform {
-  background: #ededed;
-  position: absolute;
-  width: 300px;
-  height: 520px;
-  left: 50%;
-  margin-left: -180px;
-  top: 50%;
-  margin-top: -215px;
-  padding: 30px;
-  -webkit-box-shadow: 0px 5px 5px -0px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 5px 5px -0px rgba(0, 0, 0, 0.3);
+.test {
+  max-width: 700px;
+  background-color: #fff;
+  margin: 100px auto;
+  overflow: hidden;
+  padding: 25px;
+  color: #4c4e56;
   box-shadow: 0px 5px 5px -0px rgba(0, 0, 0, 0.3);
 }
 
-#PINbox {
-  background: #ededed;
-  margin: 3.5%;
-  width: 92%;
-  font-size: 4em;
+.test h2 {
   text-align: center;
-  border: 1px solid #d5d5d5;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.PINbutton {
-  background: #ededed;
-  color: #7e7e7e;
-  border: none;
-  border-radius: 50%;
-  font-size: 1.5em;
-  text-align: center;
-  width: 60px;
-  height: 60px;
-  margin: 7px 20px;
+.test label {
+  display: block;
+  position: static;
+  margin: 0;
   padding: 0;
+  color: GREEN;
+  font-family: 'Arvo';
+  font-size: 32px;
 }
 
-.clear, .enter {
-  font-size: 1em;
-}
-
-.PINbutton:hover {
-  box-shadow: #506CE8 0 0 1px 1px;
-}
-
-.PINbutton:active {
-  background: #506CE8;
+.test input {
+  display: block;
+  width: 300px;
+  padding: 15px 0 15px 12px;
+  font-family: "Arvo";
+  font-weight: 400;
+  font-size: 32px;
+  color: #377D6A;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  outline: none;
   color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
+  text-indent: 60px;
+  transition: all .3s ease-in-out;
+  position: relative;
 }
 
-.clear:hover {
-  box-shadow: #ff3c41 0 0 1px 1px;
+.test #confirm-now {
+  width: 100%;
+  margin-top: 25px;
 }
 
-.clear:active {
-  background: #ff3c41;
-  color: #fff;
+.test .btn {
+  width: 100%;
+  margin-top: 3px;
+  font-size: 24px;
+  background-color: #2ec4a5;
+  color: white;
+  border-radius: 20px;
+  border-color: white;
+  border-width: thin;
 }
 
-.enter:hover {
-  box-shadow: #47cf73 0 0 1px 1px;
+.test .btn:active {
+  background-color: red;
 }
 
-.enter:active {
-  background: #47cf73;
-  color: #fff;
-}
-
-.shadow {
-  -webkit-box-shadow: 0px 5px 5px -0px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 5px 5px -0px rgba(0, 0, 0, 0.3);
+.smallscreen {
+  background-color: white;
+  height: 80%;
+  margin: 10px 10px 10px 10px;
   box-shadow: 0px 5px 5px -0px rgba(0, 0, 0, 0.3);
 }
+
+.smallscreen img {
+  position: relative;
+  left: 50%;
+  margin-left: -40px;
+  margin-top: 10px;
+}
+
+.smallscreen h1 {
+  text-align: center;
+  color: green;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 @media screen and (min-width:320px) {
-  .smallscreen{
+  .smallscreen {
     display: none;
   }
 }
+
 @media screen and (max-width:319px) {
-  #PINcode {
+  .test {
     display: none;
   }
 }

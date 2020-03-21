@@ -16,13 +16,13 @@ def withdrawal (request,userid):
     if request.method=="POST":
         checkUpdate=updateBalance(request,userid)
         if checkUpdate:
-            message="Uspjeh"
+            message="Success!"
 
             return render(request,'index/test.html', { 'message':message,})
         else:
 
-            message="Neuspjeh unesite ponovo"
-            return render(request, 'index/withdrawal.html', { 'message':message } )
+            message="Not enough funds! Please try again."
+            return render(request, 'index/test.html', { 'message':message } )
     else:
         user=User.objects.get(id=userid)
         kartica=Kartica.objects.get(korisnik=user)
@@ -33,7 +33,7 @@ def test (request):
         if user:
             return HttpResponseRedirect(reverse('withdrawal',args=(user.user_id,)))
         else:
-            message="nepostojeci korisnik"
+            message="Nonexisting user! Try Again"
             return render(request,'index/test.html', { 'message':message})
     else:
         return render(request, 'index/test.html')
