@@ -1,1 +1,1 @@
-web:gunicorn pyweb.pyweb.wsgi --log-file -
+web:gunicorn --chdir pyweb pyweb.wsgi --log-file -
