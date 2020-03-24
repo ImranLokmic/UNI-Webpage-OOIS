@@ -1,1 +1,1 @@
-web:gunicorn pyweb.wsgi
+web:gunicorn pyweb.pyweb.wsgi
