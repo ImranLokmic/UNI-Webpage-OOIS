@@ -1,1 +1,1 @@
-web:gunicorn --chdir pyweb pyweb.wsgi --log-file -
+web: sh -c 'cd ./pyweb/ && exec gunicorn pyweb.wsgi --log-file -'
